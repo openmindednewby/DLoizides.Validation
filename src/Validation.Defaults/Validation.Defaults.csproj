@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>Validation.Defaults</RootNamespace>
-    <PackageId>OnlineMenu.Validation</PackageId>
+    <PackageId>DLoizides.Validation</PackageId>
   </PropertyGroup>
 
   <ItemGroup>

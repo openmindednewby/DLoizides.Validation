@@ -5,7 +5,7 @@ Shared FluentValidation rules and constants for FastEndpoints services.
 ## Installation
 
 ```bash
-dotnet add package Validation.Defaults
+dotnet add package DLoizides.Validation
 ```
 
 ## Usage

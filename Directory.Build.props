@@ -9,8 +9,8 @@
     <!-- Package metadata -->
     <Authors>DLoizides</Authors>
     <Company>OnlineMenu</Company>
-    <PackageProjectUrl>https://github.com/openmindednewby/OnlineMenu.Validation</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/openmindednewby/OnlineMenu.Validation</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/openmindednewby/DLoizides.Validation</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/openmindednewby/DLoizides.Validation</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -44,6 +44,7 @@
     <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
+
 
 
 
