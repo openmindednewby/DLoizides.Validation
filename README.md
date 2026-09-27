@@ -37,6 +37,9 @@ public class CreateMenuValidator : AbstractValidator<CreateMenuRequest>
 | `.NotEmptyGuid()` | Rejects `Guid.Empty` |
 | `.ValidHexColor()` | Accepts `#RGB`, `#RRGGBB`, `#RRGGBBAA` |
 | `.ValidUrl()` | Validates well-formed HTTP/HTTPS URLs |
+| `.MustBeHttpsUrl()` | Absolute `https://` URL with a host only; rejects `http:`, `javascript:`, `data:`, relative and protocol-relative URLs, whitespace |
+| `.ValidPhotoOffset()` | `double?` within -60..60 (percent), finite; null allowed |
+| `.ValidPhotoScale()` | `double?` within 0.5..3, finite; null allowed |
 | `.ValidEmail()` | Validates email format |
 | `.ValidPageNumber()` | Page >= 1 |
 | `.ValidPageSize()` | 1 <= pageSize <= 100 |
@@ -56,3 +59,19 @@ ValidationLimits.MaxPhoneLength       // 20
 ValidationLimits.MaxColorLength       // 9 (#RRGGBBAA)
 ValidationLimits.MaxPageSize          // 100
 ```
+
+### Photo framing
+
+```csharp
+using Validation.Defaults.Abstractions;
+using Validation.Defaults.Validators;
+
+public sealed record Framing(double? X, double? Y, double? Scale) : IPhotoFraming;
+
+RuleFor(x => x.Framing!).SetValidator(new PhotoFramingValidator<Framing>())
+    .When(x => x.Framing is not null);
+```
+
+Bounds are public consts in `PhotoFramingLimits` (`MinOffsetPercent` -60, `MaxOffsetPercent` 60,
+`MinScale` 0.5, `MaxScale` 3). Keep them equal to the renderer's clamp so an accepted value is
+never silently altered on the page.
