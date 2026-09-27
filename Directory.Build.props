@@ -19,9 +19,9 @@
     <Description>Shared FluentValidation rules and constants for FastEndpoints services. Provides reusable validation extensions for GUIDs, hex colors, pagination, strings, HTTPS-only URLs, photo framing bounds, and standard field length limits.</Description>
 
     <!-- Versioning -->
-    <Version>1.0.1</Version>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
-    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
 
     <!-- NuGet settings -->
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -44,6 +44,7 @@
     <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
+
 
 
 
